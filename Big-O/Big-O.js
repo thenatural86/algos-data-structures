@@ -105,3 +105,7 @@ function printAllPairs(n) {
 // Looking at the above function we have a nested for loop.
 // if we
 // we have a loop which is O(n), as n grows the loop grows, and another loop which is also O(n).
+// But since the loop is nested, an O(n) operation inside of an O(n) operation it is O(n *n), or O(n2).
+// As n grows the runtime grows at the rate of n squared
+
+// a way to talk about how efficient a algorithm is. as the input grows, how is that reflected in the runtime.
