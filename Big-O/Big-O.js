@@ -127,3 +127,45 @@ function printAllPairs(n) {
 // O(1) is great but rare
 // O(n) is ok
 // O(n2) no bueno
+
+// SPACE COMPLEXITY
+// So far we have only discussed  time complexity: how we can analyze the runtime of an algo as the size of the inputs increase
+// We can also use Big O to analyze space complexity: how much additional memory do we need to allocate in order to run the code.
+//
+// WHAT ABOUT THE INPUTS?
+// The term auxillary space complexity refers to the space required by an algo, not including space taken up by the inputs
+
+// SPACE COMPLEXITY IN JS
+// 1. Most primitives (booleans, numbers, undefined, null) are constant space
+// 2. String require O(n) space (where n is the string length)
+// 3. Reference types are generally O(n) where n is the length (for arrays) or the number of keys (for objects)
+
+function sum(arr) {
+  let total = 0
+  for (let i = 0; i < arr.length; i++) {
+    total += arr[i]
+  }
+  return total
+}
+
+// takes an array and sums all the items in the array
+// create a variable that starts at 0
+// create a loop that goes from 0 to the end of the array
+// adding the value of each item in the array to total on each iteration and then return it
+// have two numbers (total and i), so the space not time, the space is always 2 for this function so the big O for space would be O(1) because it's constant
+
+function double(arr) {
+  let newArr = []
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(arr[i] * 2)
+  }
+  return newArr
+}
+// takes an array and doubles each item in the array and pushes that new value into a new array (newArr)
+// makes the new array
+// then loops over the length of the original array
+// then it multiplies each item in the array by 2 and then pushes that into newArr
+
+// as the input(arr) grows the space(newArr) grows as well on a linear path, so it is O(n)
+
+// LOGARITHMS
