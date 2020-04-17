@@ -109,3 +109,21 @@ function printAllPairs(n) {
 // As n grows the runtime grows at the rate of n squared
 
 // a way to talk about how efficient a algorithm is. as the input grows, how is that reflected in the runtime.
+
+// SIMPLIFYING BIG O EXPRESSIONS
+// Constants don't matter
+// O(2n) --> O(n)
+// O(500) --> O(1)
+// O(13N2) -- O(n2) n squared
+
+// Want to look at the trend from birds eye big picture perspective
+
+// BIG O SHORTHANDS
+// 1. Arithmetic operations are constant
+// 2. Variable assignment is constant
+// 3. Accessing elements in an array (by index) or object (by key) is constant
+// 4. In a loop, the complexity is the length of the loop times the complexity of whatever happens in the loop
+
+// O(1) is great but rare
+// O(n) is ok
+// O(n2) no bueno
