@@ -169,3 +169,45 @@ function double(arr) {
 // as the input(arr) grows the space(newArr) grows as well on a linear path, so it is O(n)
 
 // LOGARITHMS
+// Sometimes big O expressions involve more common complex mathematical expressions, that's where logarithms come in
+//
+// What is a log?
+// A log is the inverse of exponentiation
+// Just like add and subtract or multiply and divide are pairs
+// Logarithms and exponents or exponentiation are  a pair
+
+// log2(8) = 3 --> log base 2 of 8 equals 3
+
+// 2 to what power equals 8
+// if we take 2 and we raise it to some power, what power will give us 8?
+// 2 * 2 * 2 gives us 8
+// so 2^3 (2 cubed) gives us 8
+
+// log2(value) = exponent --> 2exponent = value
+
+// most common logs are binary log (log2) and base 10, 10 to what power gives us the answer we are looking for
+
+// for our big picture needs we will omit the 2, log === log2
+
+// LOGARITHM RULE OF THUMB
+// the logarithm of a number roughly measures the number of times you can divide
+// that number by 2 before you get a value that's less than or equal to 1
+
+// EXAMPLE
+// 8 / 2 = 4 / 2 = 2 / 2 = 1 so log(8) =  3
+
+// LOGARITHMIC TIME COMPLEXITY
+// logarithmic time complexity is great, just above linear time on the graph
+
+// there is also O(nlog n) which is not as good as O(n) but is better than O(n2)
+
+// WHY LOGARITHMS?
+// 1. certain searching algos have log time complexity
+// 2. efficient sorting algos involve logs
+// 3. recursion sometimes involves log space complexity
+
+// REACP
+// we use big O notation to analyse the performance of an algo
+//big O can give us a high level understanding of the time or space complexity of an algo
+// care about general trends (linear? constant? quadratic?)
+//time or space complexity of depends on the algo not the hardware
