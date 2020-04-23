@@ -34,7 +34,7 @@ function addUpTo(n) {
   return total
 }
 
-// More mathy solution
+// More "mathy" solution
 function addUpTo(n) {
   return (n * (n + 1)) / 2
 }
@@ -45,7 +45,7 @@ function addUpTo(n) {
 // More readable
 // Brevity
 
-// The problem with time
+// The problem with timea
 // Different and same machines will record different times
 
 // if not time then lets calculate the number of simple operations the computer has to perform
@@ -59,7 +59,7 @@ function addUpTo(n) {
 // INTRODUCING BIG O
 
 // big o notation allows us to talk formally about how the runtime of an algorithm grows as the inputs grow
-// relationship btw input  size and the time relative to that input
+// relationship btw input size and the time relative to that input
 
 // We say that an algorithm is O(f(n)), big O of f of n, if the number of simple operations the computer has to do is eventually less than a constant times f(n), as n increases
 
@@ -183,7 +183,7 @@ function double(arr) {
 // 2 * 2 * 2 gives us 8
 // so 2^3 (2 cubed) gives us 8
 
-// log2(value) = exponent --> 2exponent = value
+// log2(value) = exponent --> 2^exponent = value
 
 // most common logs are binary log (log2) and base 10, 10 to what power gives us the answer we are looking for
 
