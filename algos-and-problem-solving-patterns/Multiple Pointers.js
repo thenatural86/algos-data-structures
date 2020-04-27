@@ -69,3 +69,47 @@ countUniqueValues([1, 1, 1, 1, 1, 2]) // 2
 countUniqueValues([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13, 13]) // 7
 countUniqueValues([]) // 0
 countUniqueValues([-2, -1, -1, 0, 4]) // 4
+// Approach
+// start a pointer at the 1st index and a pointer at the 2nd index and compare the two.
+// they are not equal so we create a variable to count how many times they are not equal
+// or use the array itself to store the unique values at the beginning of the array.
+//             i
+let example = [1, 1, 1, 2, 3, 3, 4, 4, 5, 6]
+//                j
+
+// have two pointers, i which starts on the 0st index and j which starts on the 1nd index, and compare them (1,1), they are the same
+// so we increment j, now on the 2rd index and leave i (1st index) and then compare (1,1)
+// its (1,1) again so increment j (3th index) and compare to i(1st index)
+// they are different, so we increment i (2nd index) and put a two there.
+// now i will be looking at 2, we increment j so it's at the 4th index
+// we compare them and see that they are different so we put a 3 at the 2nd index
+// then we increment j, it's another 3 so we don't do anything just increase j
+// then compare i and j (3 and 4)
+// we increment i, change the value to 4 and then increment j
+// do this process until the end
+// take the current index of and add 1, to get the unique values
+
+// we built up the unique values at the beginning then can figure out how many unique values there are based on what i is equal to
+let newExample = [1, 2, 3]
+
+function countUniqueValues(arr) {
+  // check for empty array
+  if (arr.length === 0) return 0
+  // i starts on 0 index
+  let i = 0
+  // j starts on index 1, goes through entire loop
+  for (let j = 1; j < arr.length; j++) {
+    // if i and j are not equal
+    if (arr[i] !== arr[j]) {
+      // increment i
+      arr[i]++
+      // then set arr[i] to equal what is at arr[j]
+      arr[i] = arr[j]
+    }
+    console.log(i, j)
+  }
+  // i will stop at last unique value and add 1 because arrays are zero indexed
+  return i + 1
+}
+
+// when i and j are equal we don't do anything, j increments automatically because of the loop
