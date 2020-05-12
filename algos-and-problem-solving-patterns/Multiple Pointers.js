@@ -23,7 +23,7 @@ sumZero([1, 2, 3]) //undefined
 function sumZero(arr) {
   for (let i = 0; i < arr.length; i++) {
     for (let j = i + 1; j < arr.length; j++) {
-      if ((arr[i] = arr[j] === 0)) {
+      if (arr[i] + arr[j] === 0) {
         return [arr[i], arr[j]]
       }
     }
@@ -32,7 +32,6 @@ function sumZero(arr) {
 
 // first loop look goes through array, second loop goes through entire array for each element in the array, looking for an element to add to i that will equal 0
 
-sumZero([-4, -3, -2, -1, 0, 1, 2, 3, 10])
 // taking the above example and applying the Multiple Pointers patterns to it
 // we have to pointers, on starting on the left at the smallest number and another starting on the right because we know that this array is sorted
 // the first pair, -4 and 5 equals 1, which is greater than 0, so we move the right pointer down 1
@@ -42,6 +41,7 @@ sumZero([-4, -3, -2, -1, 0, 1, 2, 3, 10])
 
 // REFACTOR
 // time - O(n), space - O(1)
+
 function sumZero(arr) {
   let left = 0
   let right = arr.length - 1
@@ -57,6 +57,8 @@ function sumZero(arr) {
     }
   }
 }
+
+sumZero([-4, -3, -2, -1, 0, 1, 2, 5])
 
 //  avoid getting a false positive from 0 - 0 = 0, we set our condition for the while loop to be
 // left < right, not left <= right
@@ -74,7 +76,6 @@ countUniqueValues([-2, -1, -1, 0, 4]) // 4
 // they are not equal so we create a variable to count how many times they are not equal
 // or use the array itself to store the unique values at the beginning of the array.
 //             i
-let example = [1, 1, 1, 2, 3, 3, 4, 4, 5, 6]
 //                j
 
 // have two pointers, i which starts on the 0st index and j which starts on the 1nd index, and compare them (1,1), they are the same
@@ -88,7 +89,6 @@ let example = [1, 1, 1, 2, 3, 3, 4, 4, 5, 6]
 // we increment i, change the value to 4 and then increment j
 // do this process until the end
 // take the current index of and add 1, to get the unique values
-
 // we built up the unique values at the beginning then can figure out how many unique values there are based on what i is equal to
 let newExample = [1, 2, 3]
 
@@ -111,5 +111,8 @@ function countUniqueValues(arr) {
   // i will stop at last unique value and add 1 because arrays are zero indexed
   return i + 1
 }
-
 // when i and j are equal we don't do anything, j increments automatically because of the loop
+
+//                 i
+countUniqueValues([1, 1, 2, 3, 3, 4, 4, 5, 6])
+//                    j

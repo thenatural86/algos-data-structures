@@ -57,6 +57,7 @@ function same(arr1, arr2) {
   }
   return true
 }
+
 ;[1, 2, 3, 2, 5], [9, 1, 4, 4, 11]
 
 // instead of looping over the 1st array and then checking for each value with a sub loop through 2nd array
