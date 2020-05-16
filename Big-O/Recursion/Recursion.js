@@ -119,3 +119,72 @@ function factorial(num) {
 // Where Things Go Wrong
 // no base case or base case is wrong - so program will get stuck in a recursive loop because it will never exit the loop.
 // Returning the wrong thing or not returning anything which can lead to a maximum call stack size exceeded error, otherwise known as a stack overflow, because returning is what pops the function call off the call stack
+
+// HELPER METHOD RECURSION
+// so far all the examples are functions that call themselves inside their code body
+
+// helper method recursion design pattern
+function outer(input) {
+  let outerScopedVariable = []
+
+  function helper(helperInput) {
+    // modify the outerScopedVariable
+    helper(helperInput--)
+  }
+  helper(input)
+  return outerScopedVariable
+}
+
+// have two functions, outer function and an inner recursive function that calls itself
+// used most commonly to compile an array or other list of data
+// if we had result wasn't initialized between functions then the array would get reset to an empty array every time the function recurs
+// outer function not recursive, inner function is recursive
+
+// collect all the odd values in an array
+function collectOddValues(arr) {
+  // initialize empty array
+  let result = []
+
+  // recursive helper method to add to result
+  function helper(helperInput) {
+    // base case if helperInput is empty
+    if (helperInput.length === 0) {
+      return
+    }
+    // if the first element mod 2 is not equal to 0,that means it is an odd number
+    if (helperInput[0] % 2 !== 0) {
+      // so push helperInput[0] into result
+      result.push(helperInput[0])
+    }
+    // then call helper with the input passed in but exclude the first element
+    helper(helperInput.slice(1))
+  }
+  // then call helper function again
+  helper(arr)
+  // return result
+  return result
+}
+
+// always looking at the first element. if the first element is even then don't push that number into result array, but does slice of that element and runs helper again with smaller array
+collectOddValues([1, 2, 3, 4, 5])
+
+// pure recursion
+// the function is completely self contained and recursive, no helper method recursion.
+// more challenging
+// less straightforward than helper recursion
+
+// pass in an empty array as default arg
+function collectOddValues(arr, result = []) {
+  // base case
+  if (!arr.length) return result
+  // if element at index 0 is odd
+  if (arr[0] % 2 !== 0) {
+    //  push into result array
+    result.push(arr[0])
+  }
+  // recur collectOddValues pass in everything in array from index 1 on and result array
+  return collectOddValues(arr.slice(1), result)
+}
+
+// Pure recursion tips
+// for arrays use methods like slice, spread operator or concat to make copies of arrays and not mutate them
