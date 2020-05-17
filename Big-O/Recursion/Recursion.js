@@ -26,7 +26,7 @@
 // The base case is when the recursion ends, this is the most important part. Or else it will run forever, recursive loop
 // Two essential parts of recursion - base case and different inputs on each call
 
-// iterative approach
+// iterative
 function countDown(num) {
   for (let i = num; i > 0; i--) {
     console.log(i)
@@ -34,6 +34,7 @@ function countDown(num) {
   console.log("all done")
 }
 
+// recursive
 function countDown(num) {
   if (num <= 0) {
     console.log("All done")
@@ -141,6 +142,7 @@ function outer(input) {
 // outer function not recursive, inner function is recursive
 
 // collect all the odd values in an array
+
 function collectOddValues(arr) {
   // initialize empty array
   let result = []
@@ -164,9 +166,9 @@ function collectOddValues(arr) {
   // return result
   return result
 }
+collectOddValues([1, 2, 3, 4, 5])
 
 // always looking at the first element. if the first element is even then don't push that number into result array, but does slice of that element and runs helper again with smaller array
-collectOddValues([1, 2, 3, 4, 5])
 
 // pure recursion
 // the function is completely self contained and recursive, no helper method recursion.
