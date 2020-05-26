@@ -18,7 +18,6 @@
 // if the value is never found return -1
 
 function linearSearch(arr, val) {
-  // add whatever parameters you deem necessary - good luck!
   for (let i = 0; i <= arr.length; i++) {
     if (arr[i] === val) return i
   }
@@ -74,11 +73,10 @@ function binarySearch(arr, val) {
 }
 
 binarySearch([2, 5, 6, 9, 13, 15, 28, 30], 15)
-//            l        m              e
+//            s        m              e
 
 // Big O of Binary Search
 // O(log n) or 2 to what power gives us n
-
 // String Search
 // Searching for a substring in a larger string
 
@@ -96,3 +94,18 @@ binarySearch([2, 5, 6, 9, 13, 15, 28, 30], 15)
 // if the characters do match, keep going
 // if you complete the inner loop and find a match, increment the count of matches
 // return the count
+
+function naiveString(long, short) {
+  let count = 0
+  for (let i = 0; i < long.length; i++) {
+    for (let j = 0; j < short.length; j++) {
+      if (short[j] !== long[i + j]) {
+        break
+      }
+      if (j === short.length) {
+        count++
+      }
+    }
+  }
+  return count
+}
