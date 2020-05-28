@@ -68,3 +68,22 @@ const swap = (arr, idx1, idx2) => {
 // start looping with variable i from the end of the array towards the beginning
 // start an inner loop with variable j from the beginning until i -1
 // if arr[j] is greater than arr[j + 1], swap those two values
+
+// note: we want to shrink the number of comparisons that we are making because we are sorting the array as we go.
+
+function bubbleSort(arr) {
+  for (let i = arr.length; i > 0; i--) {
+    for (let j = 0; j < i - 1; j++) {
+      console.log(arr, arr[j], arr[j + 1])
+      // if val at arr[j] is greater than the one in front of it, swap.
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j]
+        arr[j] = arr[j + 1]
+        arr[j + 1] = temp
+      }
+    }
+  }
+  return arr
+}
+
+;[37, 45, 9, 10]
