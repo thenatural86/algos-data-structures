@@ -70,9 +70,12 @@ const swap = (arr, idx1, idx2) => {
 // if arr[j] is greater than arr[j + 1], swap those two values
 
 // note: we want to shrink the number of comparisons that we are making because we are sorting the array as we go.
+// Big O is n2 (nested loops)
 
 function bubbleSort(arr) {
+  let noSwaps
   for (let i = arr.length; i > 0; i--) {
+    noSwaps = true
     for (let j = 0; j < i - 1; j++) {
       console.log(arr, arr[j], arr[j + 1])
       // if val at arr[j] is greater than the one in front of it, swap.
@@ -80,10 +83,25 @@ function bubbleSort(arr) {
         let temp = arr[j]
         arr[j] = arr[j + 1]
         arr[j + 1] = temp
+        noSwaps = false
       }
     }
+    if (noSwaps) break
   }
   return arr
 }
 
 ;[37, 45, 9, 10]
+
+function bubble(arr) {
+  const swap = (arr, idx1, idx2) => {
+    ;[arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+  }
+  for (let i = arr.length; i > 0; i--) {
+    for (let j = 0; j < i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        swap(arr, j, j + 1)
+      }
+    }
+  }
+}
