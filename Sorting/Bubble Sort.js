@@ -88,7 +88,7 @@ function bubble(arr) {
       }
     }
     if (noSwaps) break
-  }›
+  }
   return arr
 }
 
