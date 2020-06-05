@@ -61,3 +61,6 @@ selectionSort([34, 22, 10, 19, 17])
 // 0, 2, 2
 // 0, 3, 2
 // 0, 4, 2
+
+// Big O
+// Selection sort is not very efficient O(n^2)
