@@ -21,6 +21,9 @@
 // if positive (+) number is returned, b comes before a
 // if 0 is returned, a and b are the same
 
+// Big O - O(n^2)
+// Works best with nearly sorted data
+
 function compare(a, b) {
   return a - b
 }
