@@ -173,3 +173,25 @@ mergeSort([10, 24, 76, 73])
 // can move to next line
 // merge(left,right)
 // [10] merge [24] returns [10,24]
+// first mergeSort was waiting and it now has a left side returned [10,24]
+// now it needs a right side
+// mergeSort([76,73)
+// mergeSort([76,73) <= 1? NO
+// compute midpoint
+// mergeSort([76]) on left side
+// length is equal to 1 so it returns arr
+// returns [76]
+// mergeSort on right side = [73]
+// length is <= 1 so returns arr, [73]
+// run merge([left, right]) => merge([76,73])
+// returns [73,76]
+// first mergeSort has left and right that it was waiting on
+// [10,24] merge [73,76]
+// returns [10,24,73,76]
+
+// Big O - O(n log n)
+// 2 of what power gives us n
+// as n grows the number of times we split grows at the rate of log n
+// O(n) comparisons per decomposition of array
+// as n grows the merge algo grows at the rate of O(n)
+// thus resulting in O(n log n)
