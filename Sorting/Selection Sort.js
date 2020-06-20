@@ -32,7 +32,6 @@ function selectionSort(arr) {
   const swap = (arr, idx1, idx2) => {
     return ([arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]])
   }
-
   for (let i = 0; i < arr.length; i++) {
     // Store the first selection as the minimum value that the function has seen so far
     // the position of the smallest element we've seen so far
@@ -40,7 +39,7 @@ function selectionSort(arr) {
     // want to compare i to the value at the index in front of it, so j = i + 1
     for (let j = i + 1; j < arr.length; j++) {
       // check the value of lowest to the value at j
-      // is arr[1] < arr[0]? yes
+      // is arr[1] < arr[0] ? yes
       if (arr[j] < arr[lowest]) {
         // so we set lowest (0) to be j (1)
         // index 1 becomes the new index 0

@@ -19,3 +19,4 @@ function insertion(arr) {
 }
 
 // Big O - O(n^2)
+// Best case is when working with a partially sorted algorithm
