@@ -47,3 +47,48 @@ function getDigit(num, i) {
 // Math.abs - absolute value so we get the number we want even if it's a negative (-) value
 // Math.pow(10,i) - makes it so we are dividing by 100.  7323 /100
 // Math.floor - rounds down, 73.23 -> 73
+// 73 % 10 (73 mod 10) - divide 10 into 73 -> 73/10 = 7 with a remainder of 3
+// 73 % 10 = 3
+
+// divide by the place
+// then floor to get rid of decimal
+// then mod 10
+
+// next helper deals with figuring out how many digits are in a number
+// we ned to know this because we nee to know how many times to sort things into buckets
+
+// digitCount(num) - returns the number of digits in num
+
+// digitCount(1) -> 1
+// digitCount(25) -> 2
+// digitCount(314) -> 3
+
+function digitCount() {
+  if (num === 0) return 1
+  return Math.floor(Math.log10(Math.abs(num))) + 1
+}
+
+// Math.log10 - 10 to what power gives us this number
+// + 1 gives us the number of digits in the number
+
+// mostDigits(num) - Given an array of numbers, returns the number of digits in the largest numbers in the list
+// Take a list of numbers and tell us which number has the most digits in it using digitCount()
+
+// mostDigits([1234, 56, 7]) -> 4
+// mostDigits([1, 11, 11111]) -> 5
+// mostDigits([12,34, 56, 78]) -> 2
+
+function mostDigits(nums) {
+  let maxDigits = 0
+  for (let i = 0; i < nums.length; i++) {
+    maxDigits = Math.max(maxDigits, digitCount(nums[i]))
+  }
+  return maxDigits
+}
+
+// create max variable that starts at 0
+// loop through nums and use Math.max to get larger number between the current value of maxDigits and the number of digits in each number
+
+// When we implement radixSort using these helper methods, where we will loop over and split numbers into buckets, then join them together and do that x number of times, where x is the number digits in the largest number
+
+// Radix Sort Pseudo Code
