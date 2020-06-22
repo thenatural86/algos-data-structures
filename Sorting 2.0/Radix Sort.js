@@ -92,3 +92,12 @@ function mostDigits(nums) {
 // When we implement radixSort using these helper methods, where we will loop over and split numbers into buckets, then join them together and do that x number of times, where x is the number digits in the largest number
 
 // Radix Sort Pseudo Code
+// define a function that accepts a list of numbers
+// figure out how many digits the largest number has
+// loop from k = 0 up to this largest number of digits
+// for each iteration of the loop:
+// create buckets (an empty array) for each digit (0-9)
+// an array of sub arrays
+// place each number in the corresponding bucket based on its kth digit
+// replace existing array with values in the buckets, starting with 0 and going up to 9
+// return list at the end
