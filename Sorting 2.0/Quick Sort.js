@@ -35,22 +35,32 @@
 // swap the starting element (i.e the pivot) with the pivot index
 // return the pivot index
 
+// default args
 function pivot(arr, start = 0, end = arr.length - 1) {
+  // swap helper function
   const swap = (arr, idx1, idx2) => {
     return ([arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]])
   }
 
+  // pivot is the first element in arr
   let pivot = arr[start]
+  // keeps track of where we will swap pivot to
+  // start at beginning
   let swapIdx = start
-
+  // loop over everything after start; i is less than or equal to end
   for (let i = start + 1; i <= end; i++) {
+    // compare pivot to the next item that we are looking at
+    // if it is greater than that item
     if (pivot > arr[i]) {
+      // increment swapIndx by 1
       swapIdx++
+      // swap arr[i] with swapIdx
       swap(arr, swapIdx, i)
     }
   }
+  // swap the starting index element with swapInx
   swap(arr, start, swapIdx)
   return swapIdx
 }
 
-// pivot([4, 9, 2, 1, 5, 7, 6, 3])
+// pivot([4, 8, 2, 1, 5, 7, 6, 3])
