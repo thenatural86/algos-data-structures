@@ -64,3 +64,22 @@ function pivot(arr, start = 0, end = arr.length - 1) {
 }
 
 // pivot([4, 8, 2, 1, 5, 7, 6, 3])
+
+// Quicksort Pseudo Code
+// call the pivot helper on the array
+// when the helper returns the updated pivot index, recursively call the pivot helper on the subarray to the left of that index and the subarray to the right of that index
+// the base case occurs when we consider a subarray of less than two elements
+
+function quickSort(arr, left = 0, right = arr.length - 1) {
+  if (left < right) {
+    // call pivot with arr, left and right as args
+    let pivotIndex = pivot(arr, left, right)
+    // left
+    quickSort(arr, left, pivotIndex - 1)
+    // right
+    quickSort(arr, right, pivotIndex + 1)
+  }
+  return arr
+}
+
+// Call Stack Walk Through
