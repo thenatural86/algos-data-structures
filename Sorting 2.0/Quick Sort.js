@@ -83,3 +83,7 @@ function quickSort(arr, left = 0, right = arr.length - 1) {
 }
 
 // Call Stack Walk Through
+
+// Big O
+// Best - O(n log n)
+// Worst - O(n^2)
