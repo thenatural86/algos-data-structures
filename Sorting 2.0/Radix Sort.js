@@ -101,3 +101,23 @@ function mostDigits(nums) {
 // place each number in the corresponding bucket based on its kth digit
 // replace existing array with values in the buckets, starting with 0 and going up to 9
 // return list at the end
+
+// Radix Sort
+function radixSort(nums) {
+  // figure out how many digits the largest number has
+  let maxDigitCount = mostDigits(nums)
+
+  for (let k = 0; k < maxDigitCount; k++) {
+    // make 10 empty buckets
+    let digitBuckets = Array.from({ length: 10 }, () => [])
+    for (let i = 0; i < nums.length; i++) {
+      let digit = getDigit(nums[i], k)
+      digitBuckets[digit].push(nums[i])
+    }
+    nums = [].concat(...digitBuckets)
+  }
+}
+
+// sample array = [1, 23, 456, 7809]
+
+// Big O - O(nk) - n is the number of things we are sorting and k is the length (number of digits) of the numbers
