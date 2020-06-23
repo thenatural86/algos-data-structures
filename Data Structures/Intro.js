@@ -48,15 +48,66 @@ class Student {
 // Creating Objects from Classes
 class Student {
   // every student will have a firstName and lastName
-  constructor(firstName, lastName) {
+  constructor(firstName, lastName, year) {
     this.firstName = firstName
     this.lastName = lastName
+    this.year = year
+    this.tardies = 0
+    this.scores = []
+  }
+  static enrollStudent(...students) {
+    // exicute some code with students
+  }
+
+  fullName() {
+    return `Your full name is ${this.firstName} ${this.lastName}`
+  }
+  markLate() {
+    this.tardies += 1
+    if (this.tardies >= 3) {
+      return "You're outta here!"
+    }
+    return `${this.firstName} ${this.lastName} has been late ${this.tardies} times`
+  }
+  addScore(score) {
+    this.scores.push(score)
+    return this.scores
+  }
+  calculateAverage() {
+    let sum = this.scores.reduce(function (a, b) {
+      return a + b
+    })
+    return sum / this.scores.length
   }
 }
 
-let firstStudent = new Student("Philip", "Smalls")
-let firstStudent = new Student("Lil", "Giant")
+let firstStudent = new Student("Philip", "Smalls", 3)
+let secondStudent = new Student("Lil", "Giant", 4)
 
 // first we define the blueprint (class),
 // we create new instances using the new keyword
 // then pass in firstName and lastName: "Smalls", "Philip" and "Giant", "Lil"
+
+// when inside a constructor, "this" refers to the individual instance of a class
+
+// Instance Methods
+
+// methods that provide functionality that pertains to a single instance of a class
+// not for the class or blueprint level but work on the individual instances
+// these methods are used as an interface to the data and operate on individual instances
+
+// Class Methods
+// make class methods by using the static keyword in front of the method definition
+// static methods are called without instantiating their class and cannot be called through a class instance
+// allows us to define functionality that is pertinent to classes but not necessarily to individual instances of that class
+// often used to create utility functions for an application
+// called on class Student.enrollStudent()
+
+// Inside all our instance methods and constructor, the keyword this refers to the object that is created from that class (also known as an instance)
+
+// RECAP
+// Classes are blueprints that when created make objects known as instances
+// Classes are created with the new keyword
+// The constructor function is a special function that gets run when the class is instantiated
+// Instance methods can be added to classes similar to methods in objects
+// Class methods can be added using the static keyword
