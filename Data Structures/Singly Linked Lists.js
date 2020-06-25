@@ -33,14 +33,61 @@
 class Node {
   constructor(val) {
     this.val = val
-    // in the beginning there is nothing that comes after it
     this.next = null
   }
 }
 
-// define a singly linked list that will utilize Node
+// let first = new Node("Hi")
+// first.next = new Node("there")
+// first.next.next = new Node("how")
+// first.next.next.next = new Node("are")
+// first.next.next.next.next = new Node("you")
+
+// do not initialize with any args, rather define with
+// a pointer to head, pointer to tail and a length
 class SinglyLinkedList {
-  constructor() {}
+  constructor() {
+    this.head = null
+    this.tail = null
+    this.length = 0
+  }
+
+  //  work on adding many methods to SinglyLinkedList class
+  // .push()
+  // takes a piece of data create a new Node and assign it to
+  // the head and tail of the list. Assigned to both when list
+  // is empty (80).
+  // Next we take the head and have its next
+  // property point to the next node and set tail to be (81)
+  // then take current tail and have it point to (85), then
+  // update that to be the tail.
+
+  // adding a new Node to the end of the Linked List
+
+  // Pseudo
+  // function should accept a value
+  // create a new node using the value passed into the
+  // function
+  // If there is no head property on the list, set the head
+  // and the tail to be the newly created node
+  // Otherwise set the next property on the tail to be the
+  // new node and set the tail property on the list
+  // to be the newly created node
+  // Increment the lengtrh by one
+  push(val) {
+    let newNode = new Node(val)
+    if (!this.head) {
+      this.head = newNode
+      this.tail = this.head
+    } else {
+      this.tail.next = newNode
+      this.tail = newNode
+    }
+    this.length++
+    return this
+  }
 }
 
 let list = new SinglyLinkedList()
+// list.push("Hello")
+// list.push("Goodbye")
