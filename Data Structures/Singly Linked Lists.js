@@ -86,6 +86,24 @@ class SinglyLinkedList {
     this.length++
     return this
   }
+
+  // popping is removing a node from the end of Linked
+  // List
+  // to remove tail, we must assign a new tail
+  // by starting at beginning and going through list until
+  // end and making the last node the new tail
+  // first thing we need to be able to do is travesrse
+  // the list
+
+  // Pseudo
+  // if there are no nodes in the list, return undefined
+  // loop through the list until you reach the tail
+  // set the next property of the 2nd to last node to be
+  // null
+  // set the tail to be the 2nd to last node
+  // decrement the length of the list by 1
+  // return the value of the node removed
+  pop(val) {}
 }
 
 let list = new SinglyLinkedList()
