@@ -45,6 +45,21 @@ class Node {
 
 // do not initialize with any args, rather define with
 // a pointer to head, pointer to tail and a length
+class Node {
+  constructor(val) {
+    this.val = val
+    this.next = null
+  }
+}
+
+// let first = new Node("Hi")
+// first.next = new Node("there")
+// first.next.next = new Node("how")
+// first.next.next.next = new Node("are")
+// first.next.next.next.next = new Node("you")
+
+// do not initialize with any args, rather define with
+// a pointer to head, pointer to tail and a length
 class SinglyLinkedList {
   constructor() {
     this.head = null
@@ -74,7 +89,7 @@ class SinglyLinkedList {
   // Otherwise set the next property on the tail to be the
   // new node and set the tail property on the list
   // to be the newly created node
-  // Increment the length by one
+  // Increment the lengtrh by one
   push(val) {
     let newNode = new Node(val)
     if (!this.head) {
@@ -95,7 +110,7 @@ class SinglyLinkedList {
   // to remove tail, we must assign a new tail
   // by starting at beginning and going through list until
   // end and making the last node the new tail
-  // first thing we need to be able to do is traverse
+  // first thing we need to be able to do is travesrse
   // the list
 
   // Pseudo
@@ -143,7 +158,7 @@ class SinglyLinkedList {
   // if there ar no nodes, return undefined
   // store the current head property in a variable
   // set the head property to be the current head's next property
-  // decrement the length by 1
+  // decrement the lenght by 1
   // return the value of the node removed
   shift() {
     if (!this.head) return undefined
@@ -178,6 +193,45 @@ class SinglyLinkedList {
       this.length++
       return this
     }
+  }
+
+  // Get
+  // retrieve a node by it's position in the linked list
+
+  // Pseudo
+  // should accpet an index
+  // if the index is less than zero or greater than or equal to the
+  // length of the of the list, return null
+  // loop through the list until you reach the index and return the
+  // node at that specific index
+
+  get(idx) {
+    if (idx < 0 || idx >= this.length) return null
+    let counter = 0
+    let current = this.head
+    while (counter !== idx) {
+      current = current.next
+      counter++
+    }
+    return current
+  }
+
+  // Set
+  // changing the value of a node based on it's position in the LL
+
+  // accept an index and value
+  // use get method to find the specific node
+  // if the node is not found return false
+  // if node is found, set the value of that node to be the value
+  // passed to the function and return true
+
+  set(idx, val) {
+    foundNode = this.get(idx)
+    if (foundNode) {
+      foundNode.val = val
+      return true
+    }
+    return false
   }
 }
 
