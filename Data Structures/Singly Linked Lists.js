@@ -158,7 +158,7 @@ class SinglyLinkedList {
   // if there ar no nodes, return undefined
   // store the current head property in a variable
   // set the head property to be the current head's next property
-  // decrement the lenght by 1
+  // decrement the length by 1
   // return the value of the node removed
   shift() {
     if (!this.head) return undefined
