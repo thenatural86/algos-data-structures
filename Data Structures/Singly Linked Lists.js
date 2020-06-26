@@ -62,6 +62,7 @@ class SinglyLinkedList {
   // then take current tail and have it point to (85), then
   // update that to be the tail.
 
+  // Push
   // adding a new Node to the end of the Linked List
 
   // Pseudo
@@ -73,7 +74,7 @@ class SinglyLinkedList {
   // Otherwise set the next property on the tail to be the
   // new node and set the tail property on the list
   // to be the newly created node
-  // Increment the lengtrh by one
+  // Increment the length by one
   push(val) {
     let newNode = new Node(val)
     if (!this.head) {
@@ -87,12 +88,14 @@ class SinglyLinkedList {
     return this
   }
 
+  // Pop
+
   // popping is removing a node from the end of Linked
   // List
   // to remove tail, we must assign a new tail
   // by starting at beginning and going through list until
   // end and making the last node the new tail
-  // first thing we need to be able to do is travesrse
+  // first thing we need to be able to do is traverse
   // the list
 
   // Pseudo
@@ -103,9 +106,82 @@ class SinglyLinkedList {
   // set the tail to be the 2nd to last node
   // decrement the length of the list by 1
   // return the value of the node removed
-  pop(val) {}
+
+  pop(val) {
+    if (!this.head) return undefined
+    // variables for iterator that will reach the end of list
+    // and what will become the new tail
+    let current = this.head
+    let newTail = current
+    // while there is another node after current run loop
+    while (current.next) {
+      // set newTail to equal current and then move current forward one
+      newTail = current
+      current = current.next
+    }
+    // set newTail as this.tail
+    this.tail = newTail
+    // set the next property of this.next to null
+    this.tail.next = null
+    // decrement the length of this by 1
+    this.length--
+    // check if list is empty reset head and tail to null
+    if (this.length === 0) {
+      this.head = null
+      this.tail = null
+    }
+    return current
+  }
+
+  // Shift
+
+  // shifting is removing a new node from the beginning of the Linked
+  // List
+
+  // Pseudo
+
+  // if there ar no nodes, return undefined
+  // store the current head property in a variable
+  // set the head property to be the current head's next property
+  // decrement the length by 1
+  // return the value of the node removed
+  shift() {
+    if (!this.head) return undefined
+    let current = this.head
+    this.head = current.next
+    this.length--
+    return current
+  }
+
+  // Unshift
+  // adding a new node the beginning of the LL
+
+  // Pseudo
+  // accepts a value
+  // create a new node using the value passed to the function
+  // if there is no head property on the list, set the head and tail
+  // to be the newly created node
+  // otherwise set the newly created nodes next property to be the
+  // current head property on the list
+  // set the head property on the list to be the newly created node
+  // increment the length of list by 1
+  // return LL
+
+  unshift(val) {
+    let newNode = new Node(val)
+    if (!this.head) {
+      this.head = newNode
+      this.tail = this.head
+    } else {
+      newNode.next = this.head
+      this.head = newNode
+      this.length++
+      return this
+    }
+  }
 }
 
 let list = new SinglyLinkedList()
-// list.push("Hello")
-// list.push("Goodbye")
+list.push("Hello")
+list.push("Goodbye")
+list.push("!")
