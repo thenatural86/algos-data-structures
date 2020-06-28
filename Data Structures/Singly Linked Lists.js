@@ -45,21 +45,6 @@ class Node {
 
 // do not initialize with any args, rather define with
 // a pointer to head, pointer to tail and a length
-class Node {
-  constructor(val) {
-    this.val = val
-    this.next = null
-  }
-}
-
-// let first = new Node("Hi")
-// first.next = new Node("there")
-// first.next.next = new Node("how")
-// first.next.next.next = new Node("are")
-// first.next.next.next.next = new Node("you")
-
-// do not initialize with any args, rather define with
-// a pointer to head, pointer to tail and a length
 class SinglyLinkedList {
   constructor() {
     this.head = null
@@ -122,7 +107,7 @@ class SinglyLinkedList {
   // decrement the length of the list by 1
   // return the value of the node removed
 
-  pop(val) {
+  pop() {
     if (!this.head) return undefined
     // variables for iterator that will reach the end of list
     // and what will become the new tail
@@ -199,7 +184,7 @@ class SinglyLinkedList {
   // retrieve a node by it's position in the linked list
 
   // Pseudo
-  // should accpet an index
+  // should accept an index
   // if the index is less than zero or greater than or equal to the
   // length of the of the list, return null
   // loop through the list until you reach the index and return the
@@ -336,3 +321,9 @@ let list = new SinglyLinkedList()
 list.push("Hello")
 list.push("Goodbye")
 list.push("!")
+
+// Big O
+// Insertion - O(1)
+// Removal - O(1) or O(n)
+// Searching - O(n)
+// Access - O(n)
