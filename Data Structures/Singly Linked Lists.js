@@ -74,7 +74,7 @@ class SinglyLinkedList {
   // Otherwise set the next property on the tail to be the
   // new node and set the tail property on the list
   // to be the newly created node
-  // Increment the lengtrh by one
+  // Increment the length by one
   push(val) {
     let newNode = new Node(val)
     if (!this.head) {
@@ -95,7 +95,7 @@ class SinglyLinkedList {
   // to remove tail, we must assign a new tail
   // by starting at beginning and going through list until
   // end and making the last node the new tail
-  // first thing we need to be able to do is travesrse
+  // first thing we need to be able to do is traverse
   // the list
 
   // Pseudo
