@@ -233,6 +233,103 @@ class SinglyLinkedList {
     }
     return false
   }
+
+  // Insert
+  // adding a node to the LL at a specific position
+
+  // Pseudo
+  // if the index is less than zero or greater than the length,
+  // return false
+  // if the index is the same as the length, push a new node to
+  // the end of the list
+  // if the index is 0, unshift a new node to the start of the list
+  // otherwise, using the get method, access the node at
+  // the index -1
+  // set the next property on that node to be the new node
+  // set the next property on the new node to be the previous next
+  // increment the length
+  // return true
+
+  insert(idx, val) {
+    if (idx < 0 || idx > this.length) return false
+    if (idx === this.length) return !!this.push(val)
+    if (idx === 0) return !!this.unshift(val)
+
+    let newNode = new Node(val)
+    let previous = this.get(idx - 1)
+    let temp = previous.next
+    previous.next = newNode
+    newNode.next = temp
+    this.length++
+    return true
+  }
+
+  // Remove
+  // removing a node from the LL at a specific position
+
+  // Pseudo
+  // if the index is less than zero or greater than the length
+  // return undefined
+  // if the index if the same as the length - 1, pop
+  // if the index is zero, shift
+  // otherwise, using the get method, access the node at
+  // the index - 1
+  // set the next property on that node to be the next of the
+  // next node
+  // decrement the length
+  // return the value of the removed node
+
+  remove(idx) {
+    if (idx < 0 || idx >= this.length) return undefined
+    if (idx === 0) return this.shift()
+    if (idx === this.length - 1) return this.pop()
+
+    const previousNode = this.get(idx - 1)
+    const removed = previousNode.next
+    previousNode.next = removed.next
+    this.length--
+    return removed
+  }
+
+  // Reverse
+  // reverse the ll in place
+
+  // Pseudo
+  // swap the head and the tail
+  // create next variable
+  // create previous variable
+  // create node variable and initialize to the head property
+  // loop through list
+  // set next to be the next property on whatever node is
+  // set the next property on the node to be whatever previous is
+  // set previous to be the value of the node variable
+  // set the node variable to be the value of the next variable
+
+  reverse() {
+    let node = this.head
+    this.head = this.tail
+    this.tail = node
+
+    let next
+    let prev = null
+
+    for (let i = 0; i < this.length; i++) {
+      next = node.next
+      node.next = prev
+      prev = node
+      node = next
+    }
+  }
+
+  print() {
+    let arr = []
+    let current = this.head
+    while (current) {
+      arr.push(current.val)
+      current = current.next
+    }
+    console.log(arr)
+  }
 }
 
 let list = new SinglyLinkedList()
