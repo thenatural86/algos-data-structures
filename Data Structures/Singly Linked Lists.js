@@ -327,3 +327,11 @@ list.push("!")
 // Removal - O(1) or O(n)
 // Searching - O(n)
 // Access - O(n)
+
+// Recap
+
+// Singly Linked List are an excellent alternative to arrays when insertion and deletion at the beginning are frequently required
+
+// Arrays contain a built in index where as linked list do not
+
+// The idea of a list data structure that consists of nodes is the foundation for other data structures like stacks and queues
