@@ -6,3 +6,4 @@
 
 // DLL
 // Almost identical to SLL
+// Except DLL has a pointer to the next node AND the previous node
