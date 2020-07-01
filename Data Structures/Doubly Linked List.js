@@ -31,3 +31,48 @@
 // set the tail to be the newly created node
 // increment the length
 // return the DLL
+
+// pop()
+// Removing a node from the end of a DLL
+
+// if there is no head return undefined
+// store the current tail in a variable to return later
+// if the length is 1 set the head and tail to be null
+// update the tail to be the previous Node
+// set the new tail's next null
+// decrement the length
+// return the value removed
+class DoublyLinkedList {
+  constructor() {
+    this.head = null
+    this.tail = null
+    this.length = 0
+  }
+  push(val) {
+    let newNode = new Node(val)
+    if (!this.head) {
+      this.head = newNode
+      this.tail = newNode
+    } else {
+      this.tail.next = newNode
+      newNode.prev = this.tail
+      this.tail = newNode
+    }
+    this.length++
+    return this
+  }
+  pop() {
+    if (!this.head) return undefined
+    let poppedNode = this.tail
+    if (this.length === 1) {
+      this.head = null
+      this.tail = null
+    } else {
+      this.tail = poppedNode.prev
+      this.tail.next = null
+      poppedNode.prev = null
+    }
+    this.length--
+    return poppedNode
+  }
+}
