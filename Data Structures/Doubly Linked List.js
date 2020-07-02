@@ -42,6 +42,21 @@
 // set the new tail's next null
 // decrement the length
 // return the value removed
+
+// shift()
+// removing a node from the beginning of DLL
+
+// if there is no head/ length is 0 return undefined
+// store the current head property in a variable
+// if the length is one
+// set the old head to be null
+// set the tail to be null
+// update the head to be the next of the old head
+// set the heads prev property to null
+// set the old heads next to null
+// decrement the length
+// return the old head
+
 class DoublyLinkedList {
   constructor() {
     this.head = null
@@ -74,5 +89,19 @@ class DoublyLinkedList {
     }
     this.length--
     return poppedNode
+  }
+  shift() {
+    if (!this.head) return undefined
+    let oldHead = this.head
+    if (this.length === 1) {
+      this.head = null
+      this.tail = null
+    } else {
+      this.head = oldHead.next
+      this.head.prev = null
+      oldHead.next = null
+      this.length--
+      return oldHead
+    }
   }
 }
