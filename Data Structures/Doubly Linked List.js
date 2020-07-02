@@ -57,6 +57,20 @@
 // decrement the length
 // return the old head
 
+// unshift()
+// adding a node to the beginning of DLL
+
+// create a new node with the value passed to the function
+// if the length is 0
+// set the head to be the new node
+// set the tail to be the new node
+// otherwise
+// set the prev property on the head of the list to be the new node
+// set the next property on the new node to be head property
+// update the head to be the new node
+// increment the length
+// return the list
+
 class DoublyLinkedList {
   constructor() {
     this.head = null
@@ -103,5 +117,18 @@ class DoublyLinkedList {
       this.length--
       return oldHead
     }
+  }
+  unshift(val) {
+    let newNode = new Node(val)
+    if (this.length === 0) {
+      this.head = newNode
+      this.tail = newNode
+    } else {
+      this.head.prev = newNode
+      newNode.next = this.head
+      this.head = newNode
+    }
+    this.length++
+    return newNode
   }
 }
