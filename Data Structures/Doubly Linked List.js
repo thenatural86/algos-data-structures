@@ -71,6 +71,17 @@
 // increment the length
 // return the list
 
+// get()
+// accessing a node in DLL by its position
+
+// if the index is less than 0 or greater or equal to the length return null
+// if the index is less than or equal to half the length of the list
+// loop through the list starting from the head and loop towards the middle
+// return the node once it is found
+// if the index is greater than half the length of the list
+// loop through the list starting from the tail and loop towards the middle
+// return the node once it's found
+
 class DoublyLinkedList {
   constructor() {
     this.head = null
