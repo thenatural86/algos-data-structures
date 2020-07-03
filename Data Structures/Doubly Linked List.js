@@ -169,4 +169,12 @@ class DoublyLinkedList {
     }
     return current
   }
+  set(idx, val) {
+    let foundNode = this.get(idx)
+    if (foundNode != null) {
+      foundNode.val = val
+      return true
+    }
+    return false
+  }
 }
