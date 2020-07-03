@@ -82,6 +82,14 @@
 // loop through the list starting from the tail and loop towards the middle
 // return the node once it's found
 
+// set()
+// replacing the value of a node based on its position in  DLL
+
+// create a variable which is the result of the get method at the index passed to the function
+// if the get method returns a valid node, set the value of that node to be the value passed to the function
+// return true
+// otherwise return false
+
 class DoublyLinkedList {
   constructor() {
     this.head = null
