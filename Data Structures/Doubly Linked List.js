@@ -90,6 +90,8 @@
 // return true
 // otherwise return false
 
+// insert()
+// adding a node in a DLL by a certain position
 class DoublyLinkedList {
   constructor() {
     this.head = null
