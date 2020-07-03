@@ -142,4 +142,23 @@ class DoublyLinkedList {
     this.length++
     return newNode
   }
+  get(idx) {
+    if (idx < 0 || idx >= this.length) return null
+    if (idx <= this.length / 2) {
+      let counter = 0
+      let current = this.head
+      while (counter !== idx) {
+        current = current.next
+        counter++
+      }
+    } else {
+      let count = this.length - 1
+      let current = this.tail
+      while (count !== idx) {
+        current = current.prev
+        current--
+      }
+    }
+    return current
+  }
 }
