@@ -92,6 +92,15 @@
 
 // insert()
 // adding a node in a DLL by a certain position
+
+// if the index is less than zero or greater than or equal to the length return false
+// if the index is zero, unshift
+// if the index is the same as the length, push
+// use the get method to access the index -1
+// set the next and prev properties on the correct nodes to link everything together
+// increment the length
+// return true
+
 class DoublyLinkedList {
   constructor() {
     this.head = null
@@ -152,31 +161,48 @@ class DoublyLinkedList {
     this.length++
     return newNode
   }
-  get(idx) {
-    if (idx < 0 || idx >= this.length) return null
-    if (idx <= this.length / 2) {
+  get(index) {
+    if (index < 0 || index >= this.length) return null
+    if (index <= this.length / 2) {
       let counter = 0
       let current = this.head
-      while (counter !== idx) {
+      while (counter !== index) {
         current = current.next
         counter++
       }
     } else {
       let count = this.length - 1
       let current = this.tail
-      while (count !== idx) {
+      while (count !== index) {
         current = current.prev
         current--
       }
     }
     return current
   }
-  set(idx, val) {
-    let foundNode = this.get(idx)
+  set(index, val) {
+    let foundNode = this.get(index)
     if (foundNode != null) {
       foundNode.val = val
       return true
     }
     return false
+  }
+  insert(index, val) {
+    if (index < 0 || index > this.length) return false
+    if (index === 0) return !!this.unshift(val)
+    if (index === this.length) return !!this.push(val)
+
+    let newNode = new Node(val)
+    let beforeNode = this.get(index - 1)
+    let afterNode = beforeNode.next
+
+    beforeNode.next = newNode
+    newNode.prev = beforeNode
+    newNode.next = afterNode
+    afterNode.prev = newNode
+
+    this.length++
+    return true
   }
 }
