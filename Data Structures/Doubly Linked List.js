@@ -7,6 +7,8 @@
 // DLL
 // Almost identical to SLL
 // Except DLL has a pointer to the next node AND the previous node
+// better than than SLL at finding nodes and can be done in half the time
+// however DLL take up more memory because of the extra pointer
 
 // Comparisons with SLL
 // more memory === more flexibility
@@ -236,3 +238,10 @@ class DoublyLinkedList {
     return removedNode
   }
 }
+
+// Big O
+// insertion - O(1)
+// removal - O(1)
+// searching - O(n)
+// access - O(n)
+//
