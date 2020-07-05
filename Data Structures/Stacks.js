@@ -10,3 +10,5 @@
 
 // Where stacks are used
 // managing function invocations
+// undo/redo (command z)
+// routing (the history object) is treated like a stack
