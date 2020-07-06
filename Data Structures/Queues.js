@@ -2,6 +2,7 @@
 // define what a queue is
 // understand use cases for a queue
 // implement operations on a queue data structure
+// useful for processing tasks and are foundational for more complex data structures
 
 // What is a Queue
 // A queue is a FIFO - first in first out - data structure
