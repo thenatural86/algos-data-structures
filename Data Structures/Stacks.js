@@ -55,14 +55,12 @@ class Stack {
   }
   push(val) {
     let newNode = new Node(val)
-    if (this.size === 0) {
+    if (!this.first) {
       this.first = newNode
       this.last = newNode
-    }
-    if (this.size >= 1) {
-      let temp = this.first
-      this.first = newNode
-      this.first.next = temp
+    } else {
+      this.last.next = newNode
+      this.last = newNode
     }
     return ++this.size
   }
