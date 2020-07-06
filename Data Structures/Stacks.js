@@ -34,6 +34,12 @@
 // decrement the size by one
 // return the value of the node removed
 
+// Big O of Stacks
+// insertion - O(1)
+// removal - O(1)
+// searching - O(n)
+// access - O(n)
+
 class Node {
   constructor(value) {
     this.value = value
