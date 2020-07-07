@@ -33,8 +33,22 @@
 // Every node to the left of a parent is always less than the parent
 // Every node to the right of the parent is always greater than the parent
 
-// define a class called node
-// left and right point to null at initialization
+// insert()
+// can do iteratively or recursively
+// create a new node
+// starting at the new node
+// check if there is a root, if not the root now becomes that new node
+// if there is a root, check if the value of the new node is greater than or less than the value of the root
+// if it is greater
+// check to see if there is a node to the right
+// if there is, move to that node and repeat these steps
+// if there is not, add that node as the right property
+// if it is less
+// check to see if there is a node to the left
+// if there is, move to that node and repeat these steps
+// if there is not, add that node as the left property
+// return tree at end of method
+
 class Node {
   constructor(value) {
     this.value = value
@@ -43,7 +57,6 @@ class Node {
   }
 }
 
-// needs to have root property that is root by default and that's it
 class BinarySearchTree {
   constructor() {
     this.root = null
