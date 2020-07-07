@@ -33,8 +33,6 @@
 // Every node to the left of a parent is always less than the parent
 // Every node to the right of the parent is always greater than the parent
 
-// needs to have root property that is root by default and that's it
-
 // define a class called node
 // left and right point to null at initialization
 class Node {
@@ -44,3 +42,16 @@ class Node {
     this.right = null
   }
 }
+
+// needs to have root property that is root by default and that's it
+class BinarySearchTree {
+  constructor() {
+    this.root = null
+  }
+}
+
+let tree = new BinarySearchTree()
+tree.root = new Node(10)
+tree.root.right = new Node(15)
+tree.root.left = new Node(7)
+tree.root.left.right = new Node(9)
