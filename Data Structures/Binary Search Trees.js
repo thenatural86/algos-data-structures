@@ -18,6 +18,21 @@
 // Leaf - A node with no children
 // Edge - The connection between one node and another
 
+// Some Uses for Trees
+// HTML DOM
+// Network Routing
+// Abstract SyntaX Trees
+// Artificial Intelligence(Decision Tree)
+// Folders in an operating system
+
+// Intro to Binary Trees
+
+// Binary Search Tree
+// Each node can have at most, 2 children (can have 0,1 or 2 children)
+// Sorted in a particular way
+// Every node to the left of a parent is always less than the parent
+// Every node to the right of the parent is always greater than the parent
+
 // needs to have root property that is root by default and that's it
 
 // define a class called node
