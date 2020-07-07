@@ -49,6 +49,24 @@
 // if there is not, add that node as the left property
 // return tree at end of method
 
+// find()
+// starting at the root
+// check if there is a root, if not, we're done searching
+// if there us a root check if the value of the new node is the value we are looking for. if we found it we're done
+// if not, check to see if the value is greater than or less than the value of the root
+// if it is greater
+// check to see if there is a node to the right
+// if there is, move to that node and repeat these steps
+// if there is not, we're done searching
+// if it is less
+// check to see if there is a node to the left
+// if there is, move to that node and repeat these steps
+// if not, we're done searching
+
+// Big O
+// Insertion - O(log n)
+// Searching - O(log n)
+
 class Node {
   constructor(value) {
     this.value = value
@@ -87,6 +105,22 @@ class BinarySearchTree {
         }
       }
     }
+  }
+  find(value) {
+    if (this.root === null) return false
+    let current = this.root
+    let found = false
+    while (current && !found) {
+      if (value < current.value) {
+        current = current.left
+      } else if (value > current.value) {
+        current = current.right
+      } else {
+        found = true
+      }
+    }
+    if (!found) return undefined
+    return current
   }
 }
 
