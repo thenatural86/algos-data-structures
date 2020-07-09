@@ -63,6 +63,17 @@
 // if there is, move to that node and repeat these steps
 // if not, we're done searching
 
+// How do we visit every node once?
+
+// Breadth First Search (BFS) - Iterative - we visit every sibling node before we visit a child
+// Create a queue, this can be an array, and a variable to store the value of nodes visited
+// Place the root node in the queue
+// Loop as long as there is anything in the queue
+// Dequeue a node from the queue(shift()) and push the value of the node into the variable that stores the nodes
+// If there is a left property on the node dequeued, add it to the queue
+// If there is a right property on the node dequeued, add it to the queue
+// Return the variable that stores the values
+
 // Big O
 // Insertion - O(log n)
 // Searching - O(log n)
@@ -116,15 +127,34 @@ class BinarySearchTree {
       } else if (value > current.value) {
         current = current.right
       } else {
-        found = true
+        return true
       }
     }
-    if (!found) return undefined
-    return current
+    return false
+  }
+  BFS() {
+    let node = this.root
+    let queue = []
+    let data = []
+    queue.push(node)
+    while (queue.length) {
+      node = queue.shift()
+      data.push(node.value)
+      if (node.left) {
+        queue.push(node.left)
+      }
+      if (node.right) {
+        queue.push(node.right)
+      }
+    }
+    return data
   }
 }
 
 let tree = new BinarySearchTree()
 tree.insert(10)
-tree.insert(5)
-tree.insert(2)
+tree.insert(6)
+tree.insert(15)
+tree.insert(3)
+tree.insert(8)
+tree.insert(20)
