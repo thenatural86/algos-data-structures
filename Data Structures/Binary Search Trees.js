@@ -74,6 +74,17 @@
 // If there is a right property on the node dequeued, add it to the queue
 // Return the variable that stores the values
 
+// Depth First Search (DFS) - PreOrder
+// Recursive - visit nodes vertically down to the end of the tree before visiting sibling nodes
+// Create a variable to store the values of nodes visited
+// Store the root of the BST in a variable called current
+// Write a helper function which accepts a node
+// Push the value of the node to the variable that stores the values
+// If the node has a left property, call the helper function with the left property on the node
+// If the node has a right property, call the helper function with the right property of the node
+// Invoke the helper function with the current variable
+// Return the array of values
+
 // Big O
 // Insertion - O(log n)
 // Searching - O(log n)
