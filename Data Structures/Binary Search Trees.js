@@ -224,7 +224,6 @@ tree.insert(20)
 tree.DFSPreOrder()
 tree.DFSPostOrder()
 tree.DFSInOrder()
-
 // Recap
 // Trees are non-linear data structures that contain a root and child nodes
 // Binary trees can have values of any type, but at most two children for each parent
