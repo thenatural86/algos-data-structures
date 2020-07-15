@@ -54,6 +54,7 @@
 // the child index we swapped to now becomes the new parent index
 // keep looping and swapping until neither child is larger than the element
 // return the old root
+
 class MaxBinaryHeap {
   constructor() {
     this.values = []
