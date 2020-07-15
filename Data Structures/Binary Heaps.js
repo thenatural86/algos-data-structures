@@ -55,6 +55,16 @@
 // keep looping and swapping until neither child is larger than the element
 // return the old root
 
+// Big O
+// Insertion - O(log n)
+// Removal - O(log n)
+// Search - O(n)
+
+// Recap
+// Binary heaps are very useful data structures for sorting and implementing other data structures like Priority Queues
+// Binary Heaps are either Max Binary Heaps or Min Binary Heaps with parents either being larger or smaller than their children
+// With just a little bit of math we can represent heaps using arrays
+
 class MaxBinaryHeap {
   constructor() {
     this.values = []
