@@ -22,3 +22,9 @@
 // fast (i.e. constant time)
 // doesn't cluster outputs at specific indices, but distributes uniformly
 // deterministic (same input yields same output)
+
+// Prime numbers
+// the prime number in the hash is helpful in spreading out the keys more uniformly
+// it's also helpful if the array that we're putting values into has a prime length
+
+// Dealing with Collisions
